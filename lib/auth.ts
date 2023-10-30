@@ -3,6 +3,8 @@ import { NextAuthOptions } from 'next-auth';
 import EmailProvider from 'next-auth/providers/email';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
+import FacebookProvider from 'next-auth/providers/facebook';
+import InstagramProvider from 'next-auth/providers/instagram';
 import { db } from '@/lib/db';
 import { env } from 'process';
 export const authOptions: NextAuthOptions = {
@@ -21,6 +23,14 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID!,
       clientSecret: env.GOOGLE_CLIENT_SECRET!,
+    }),
+    FacebookProvider({
+      clientId: env.FACEBOOK_CLIENT_ID!,
+      clientSecret: env.FACEBOOK_CLIENT_SECRET!,
+    }),
+    InstagramProvider({
+      clientId: env.INSTAGRAM_CLIENT_ID!,
+      clientSecret: env.INSTAGRAM_CLIENT_SECRET!,
     }),
   ],
   callbacks: {

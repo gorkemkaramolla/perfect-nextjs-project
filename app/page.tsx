@@ -1,13 +1,11 @@
 'use client';
 import Image from 'next/image';
-import GoogleLogin from '@/components/googleLogin';
-import GithubLogin from '@/components/githubLogin';
+import Login from '@/components/oauth';
 export default function Home() {
   return (
     <main className='flex w-screen h-screen'>
       <div className=''>
-        <GoogleLogin />
-        <GithubLogin />
+        <Login platform='google' />
       </div>
     </main>
   );
